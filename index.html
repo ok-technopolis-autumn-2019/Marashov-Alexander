@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <style type="text/css">
+                        h1 {
+                                font-family: Roboto;
+                                line-height: 21px;
+                                letter-spacing: 2.5px;
+                                color: #CCCCCC;
+                                text-align: center;
+                        }
+                        table.todos-list {
+                                margin-left: auto;
+                                margin-right: auto;
+                        }
+                        button.todos-list-add {
+                                font-size: 6pt;
+                                border: 0px;
+                        }
+                        button.todos-footer-button {
+                                font-size: 7pt;
+                                border: 0px
+                        }
+                        div.todos-footer-counter {
+                                font-size: 7pt;
+                        }
+                </style>
+                <title>
+                        TODOS
+                </title> 
+        </head>
+        <body>
+                <table class=todos>
+                        <tr>
+                                <td>
+                                        <h1>TODOS</h1>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                        <table class=todos-list>
+                                                <tr>
+                                                        <td><button class=todos-list-add>\/</button></td>
+                                                        <td><input placeholder="What needs to be done?"></td>
+                                                </tr>
+                                                <tr>
+                                                        <td><input class=todos-list-item type="checkbox"></td>
+                                                        <td>HTML</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><input class=todos-list-item type="checkbox"></td>
+                                                        <td>CSS</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><input class=todos-list-item type="checkbox"></td>
+                                                        <td>JS</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><input class=todos-list-item type="checkbox"></td>
+                                                        <td>JS tools</td>
+                                                </tr>
+                                        </table>
+                                </td>
+                        </tr>
+                        <tr><td></td></tr>
+                        <tr>
+                                <td>
+                                        <table class=todos-footer>
+                                                <tr>
+                                                        <td><div class=todos-footer-counter>3 items left</div></td>
+                                                        <td><button class=todos-footer-button type="radio">All</button></td>
+                                                        <td><button class=todos-footer-button type="radio">Active</button></td>
+                                                        <td><button class=todos-footer-button type="radio">Completed</button></td>
+                                                        <td><button class=todos-footer-button>Clear completed</button></td>
+                                                </tr>
+                                        </table>
+                                </td>
+                        </tr>
+                </table>
+        </body>
+</html>
+
