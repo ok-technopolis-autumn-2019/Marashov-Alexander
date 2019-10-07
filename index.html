@@ -1,83 +1,111 @@
 <!DOCTYPE html>
-<html>
-        <head>
-                <meta charset="UTF-8">
-                <style type="text/css">
-                        h1 {
-                                font-family: Roboto;
-                                line-height: 21px;
-                                letter-spacing: 2.5px;
-                                color: #CCCCCC;
-                                text-align: center;
-                        }
-                        table.todos-list {
-                                margin-left: auto;
-                                margin-right: auto;
-                        }
-                        button.todos-list-add {
-                                font-size: 6pt;
-                                border: 0px;
-                        }
-                        button.todos-footer-button {
-                                font-size: 7pt;
-                                border: 0px
-                        }
-                        div.todos-footer-counter {
-                                font-size: 7pt;
-                        }
-                </style>
-                <title>
-                        TODOS
-                </title> 
-        </head>
-        <body>
-                <table class=todos>
-                        <tr>
-                                <td>
-                                        <h1>TODOS</h1>
-                                </td>
-                        </tr>
-                        <tr>
-                                <td>
-                                        <table class=todos-list>
-                                                <tr>
-                                                        <td><button class=todos-list-add>\/</button></td>
-                                                        <td><input placeholder="What needs to be done?"></td>
-                                                </tr>
-                                                <tr>
-                                                        <td><input class=todos-list-item type="checkbox"></td>
-                                                        <td>HTML</td>
-                                                </tr>
-                                                <tr>
-                                                        <td><input class=todos-list-item type="checkbox"></td>
-                                                        <td>CSS</td>
-                                                </tr>
-                                                <tr>
-                                                        <td><input class=todos-list-item type="checkbox"></td>
-                                                        <td>JS</td>
-                                                </tr>
-                                                <tr>
-                                                        <td><input class=todos-list-item type="checkbox"></td>
-                                                        <td>JS tools</td>
-                                                </tr>
-                                        </table>
-                                </td>
-                        </tr>
-                        <tr><td></td></tr>
-                        <tr>
-                                <td>
-                                        <table class=todos-footer>
-                                                <tr>
-                                                        <td><div class=todos-footer-counter>3 items left</div></td>
-                                                        <td><button class=todos-footer-button>All</button></td>
-                                                        <td><button class=todos-footer-button>Active</button></td>
-                                                        <td><button class=todos-footer-button>Completed</button></td>
-                                                        <td><button class=todos-footer-button>Clear completed</button></td>
-                                                </tr>
-                                        </table>
-                                </td>
-                        </tr>
-                </table>
-        </body>
-</html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        TODOS-APP
+    </title>
+</head>
+    <body>
+        <div class="todo-app">
+            <header class="todo-app__header">
+                <h1 class="header">TODOS</h1>
+            </header>
 
+            <main class="todo-app__frame">
+
+                <section class="todo-app__frame-main-controls main-controls">
+                    <div class="main-controls__select-all">
+                        <button class="main-controls__select-all-button">Select all</button>
+                    </div>
+
+                    <div class="main-controls__add">
+                        <input class="main-controls__add-textfield" type="text" placeholder="What needs to be done?" />
+                    </div>
+                </section>
+
+                <section class="todo-app__frame-tasks tasks">
+                    <ul class="tasks-list">
+                        <li class="tasks-list__item item">
+                            <div class="item__view">
+                                <input
+                                        type="checkbox"
+                                        class="item__view-status"
+                                        aria-label="Completed task: HTML"
+                                />
+                                <span class="item__view-task">HTML</span>
+                                <button class="item__view-delete-button">Delete task</button>
+                            </div>
+                        </li>
+
+                        <li class="tasks-list__item item">
+                            <div class="item__view">
+                                <input
+                                        type="checkbox"
+                                        class="item__view-status"
+                                        aria-label="Completed task: CSS"
+                                />
+                                <span class="item__view-task">CSS</span>
+                                <button class="item__view-delete-button">Delete task</button>
+                            </div>
+                        </li>
+
+                        <li class="tasks-list__item item">
+                            <div class="item__view">
+                                <input
+                                        type="checkbox"
+                                        class="item__view-status"
+                                        aria-label="Completed task: JS"
+                                />
+                                <span class="item__view-task">JS</span>
+                                <button class="item__view-delete-button">Delete task</button>
+                            </div>
+                        </li>
+
+                        <li class="tasks-list__item item">
+                            <div class="item__view">
+                                <input
+                                        type="checkbox"
+                                        class="item__view-status"
+                                        aria-label="Completed task: JS tools"
+                                />
+                                <span class="item__view-task">JS tools</span>
+                                <button class="item__view-delete-button">Delete task</button>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="todo-app__frame-actions-bar actions-bar">
+                    <div class="actions-bar__item">
+                        <div class="task-counter">3 items left</div>
+                    </div>
+
+                    <div class="actions-bar__item">
+                        <div class="task-filter" role="group" aria-label="Filter tasks by status">
+                            <label class="task-filter__item">
+                                <input class="task-filter__input" type="radio" name="filter" checked="checked" value="All"/>
+                                <span class="task-filter__text" aria-label="Select all tasks">All</span>
+                            </label>
+
+                            <label class="task-filter__item">
+                                <input class="task-filter__input" type="radio" name="filter" value="Active"/>
+                                <span class="task-filter__text" aria-label="Select active tasks">Active</span>
+                            </label>
+
+                            <label class="task-filter__item">
+                                <input class="task-filter__input" type="radio" name="filter" value="Completed"/>
+                                <span class="task-filter__text" aria-label="Select completed tasks">Completed</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="actions-bar__item">
+                        <button class="task-clear-completed">Clear completed</button>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </body>
+</html>
