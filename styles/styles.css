@@ -1,0 +1,171 @@
+* {
+    font-family: Roboto, serif;
+}
+.todo-app {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    flex: auto;
+}
+    .todo-app__header {
+        flex: auto;
+        width: inherit;
+    }
+        .todo-app__header-h1 {
+            text-align: center;
+            font-style: normal;
+            color: #CCCCCC;
+        }
+    .todo-app__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: inherit;
+        border: 1px lightgray solid;
+    }
+        .content__controls{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: inherit;
+            border: 1px lightgray solid;
+        }
+            .controls__select-all-button {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                background: #FFF url("../images/arrow_down.svg") no-repeat 2px 2px;
+                background-size: 24px 24px;
+                border: none;
+                flex-grow: 1;
+            }
+            .controls__create-text-field {
+                flex-grow: 40;
+                font-style: italic;
+                font-size: 15pt;
+                background: none;
+                border: none;
+            }
+        .content__tasks {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: inherit;
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+            .item-view {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 400px;
+            }
+                .item-view__checkbox-status {
+                    width: 0;
+                    height: 0;
+                }
+                .item-view-task-area {
+                    font-style: normal;
+                    font-size: 15pt;
+                    flex-grow: 3;
+                    color: #666666;
+                    background: none;
+                    border: 1px lightgray solid;
+                    border-right: none;
+                    min-height: 23px;
+                }
+                .item-view-delete-button {
+                    flex-shrink: 0;
+                    display: inline-block;
+                    width: 29px;
+                    height: 29px;
+                    font-size: 15pt;
+                    color: #666666;
+                    background: #FFF url("../images/cross.svg") no-repeat;
+                    background-size: 29px 29px;
+                    border: 1px lightgray solid;
+                    border-left: none;
+                }
+                    .checkbox-status-off {
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                    }
+                    .checkbox-status-off:after {
+                        display: inline-block;
+                        position: relative;
+                        top: 2px;
+                        right: 5px;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        background: #E5E5E5;
+                        background: linear-gradient(#D0D0D0, #FDFDFD);
+                        box-shadow:
+                                0 0 2px 2px #FFF inset,
+                                0 0 4px 1px rgba(0, 0, 0, 0.6);
+                        content: '';
+                    }
+                .item-view__checkbox-status:checked ~ .item-view-task-area {
+                    text-decoration: line-through;
+                }
+                .item-view__checkbox-status:checked + .item-view__checkbox-label .checkbox-status-off:after {
+                    background: url("../images/checked.svg") no-repeat;
+                    background-size: 20px 20px;
+                }
+                .item-view__checkbox-status:focus + .item-view__checkbox-label .checkbox-status-off:after,
+                .item-view__checkbox-status:hover + .item-view__checkbox-label .checkbox-status-off:after {
+                    background: rgba(100, 100, 100, 0.25);
+                }
+                .item-view__checkbox-status:checked:focus + .item-view__checkbox-label .checkbox-status-off:after,
+                .item-view__checkbox-status:checked:hover + .item-view__checkbox-label .checkbox-status-off:after {
+                    background: rgba(100, 100, 100, 0.25) url("../images/checked.svg") no-repeat;
+                    background-size: 20px 20px;
+                }
+                .item__empty_place {
+                    display: inline-block;
+                    height: 30px;
+                }
+        .content__actions-bar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            font-size: 8pt;
+            width: 400px;
+        }
+            .actions-bar__item {
+                display: flex;
+                font-size: 8pt;
+                align-self: center;
+            }
+            .task-filter {
+                display: flex;
+                flex-direction: row;
+            }
+                .task-filter__item {
+                    border: 1px solid #aaaaaa;
+                }
+                .task-filter__text {
+                    position: relative;
+                    right: 5px;
+                    text-align: center;
+                }
+                .task-filter__input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                }
+                .task-filter__input:checked + .task-filter__text {
+                    background: lightgray;
+                }
+                .task-clear-completed {
+                    font-size: 8px;
+                    border: none;
+                }
