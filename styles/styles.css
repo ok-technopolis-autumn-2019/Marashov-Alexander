@@ -7,7 +7,6 @@
 .todo-app {
     display: flex;
     flex-direction: column;
-    width: 1000px;
     height: auto;
     margin: 0 auto;
     justify-content: center;
