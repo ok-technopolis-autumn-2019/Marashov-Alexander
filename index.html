@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="eu">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <title>
     TODOS-APP
   </title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 
@@ -13,7 +14,7 @@
 <div class="todo-app">
 
   <header class="todo-app__header">
-    <h1 class="todo-app__header-h1">TODOS</h1>
+    <h1 class="todo-app__header-h1">todos</h1>
   </header>
 
   <main class="todo-app__content content">
@@ -72,11 +73,8 @@
             <button class="item-view-delete-button"></button>
           </div>
         </li>
-
-        <li>
-            <div class="item__empty_place"></div>
-        </li>
       </ul>
+      <div class="item__empty_place"></div>
     </section>
 
     <section class="content__actions-bar actions-bar">
@@ -87,21 +85,30 @@
       <div class="actions-bar__item">
 
         <div class="task-filter" role="group" aria-label="Filter tasks by status">
-          <label class="task-filter__item">
-            <input class="task-filter__input" type="radio" name="filter" checked="checked" value="All"/>
-            <span class="task-filter__text" aria-label="Select all tasks">All</span>
-          </label>
 
-          <label class="task-filter__item">
-            <input class="task-filter__input" type="radio" name="filter" value="Active"/>
-            <span class="task-filter__text" aria-label="Select active tasks">Active</span>
-          </label>
+          <div class="task-filter__item">
+            <input id="radio1" class="task-filter__input" type="radio" name="filter" checked="checked" value="All"/>
+            <label for="radio1" class="task-filter__label">
+              <span class="task-filter__text" aria-label="Select all tasks">All</span>
+            </label>
+          </div>
 
-          <label class="task-filter__item">
-            <input class="task-filter__input" type="radio" name="filter" value="Completed"/>
-            <span class="task-filter__text" aria-label="Select completed tasks">Completed</span>
-          </label>
+          <div class="task-filter__item">
+            <input id="radio2" class="task-filter__input" type="radio" name="filter" value="Active"/>
+            <label for="radio2" class="task-filter__label">
+              <span class="task-filter__text" aria-label="Select active tasks">Active</span>
+            </label>
+          </div>
+
+          <div class="task-filter__item">
+            <input id="radio3" class="task-filter__input" type="radio" name="filter" value="Completed"/>
+            <label for="radio3" class="task-filter__label">
+              <span class="task-filter__text" aria-label="Select completed tasks">Completed</span>
+            </label>
+          </div>
+
         </div>
+
       </div>
 
       <div class="actions-bar__item">

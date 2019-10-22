@@ -1,171 +1,272 @@
-* {
-    font-family: Roboto, serif;
-}
+@import "reset.css";
+
+/*TODO: добавить правильные тени под приложением*/
+/*TODO: настроить отображение фильтра задач*/
+/*TODO: разделить стили по разным файлам*/
+
 .todo-app {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 1000px;
+    height: auto;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
-    flex: auto;
-}
-    .todo-app__header {
-        flex: auto;
-        width: inherit;
     }
+    .todo-app__header {
+        width: 562px;
+        height: 115px;
+        margin-bottom: 20px;
+        }
         .todo-app__header-h1 {
             text-align: center;
+            font-family: Roboto, sans-serif;
             font-style: normal;
+            font-weight: 200;
+            font-size: 100px;
+            line-height: 21px;
+            letter-spacing: -2.5px;
             color: #CCCCCC;
-        }
+            }
     .todo-app__content {
-        display: flex;
+        display: block;
         flex-direction: column;
-        align-items: center;
-        width: inherit;
+        width: 562px;
+        height: auto;
         border: 1px lightgray solid;
-    }
+        }
+        .todo-app__content::after{
+            position: absolute;
+            width: 562px;
+            height: 5px;
+            background: white;
+            box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+            content: '';
+            }
+
         .content__controls{
             display: flex;
+            width: 561px;
+            height: 66px;
             flex-direction: row;
             justify-content: center;
-            width: inherit;
-            border: 1px lightgray solid;
-        }
+            border-bottom: 1px lightgray solid;
+            }
             .controls__select-all-button {
                 display: inline-block;
-                width: 24px;
-                height: 24px;
-                background: #FFF url("../images/arrow_down.svg") no-repeat 2px 2px;
-                background-size: 24px 24px;
+                width: 60px;
+                height: inherit;
+                background-size: 30px 16px;
+                background: #FFF url("../images/arrow_down.svg") no-repeat 17px 27px;
                 border: none;
-                flex-grow: 1;
+                flex-shrink: 0;
+                padding: 0;
             }
             .controls__create-text-field {
-                flex-grow: 40;
+                flex-grow: 1;
+                width: 517px;
+                font-family: Roboto, sans-serif;
                 font-style: italic;
-                font-size: 15pt;
-                background: none;
+                font-weight: 300;
+                font-size: 24px;
+                line-height: 21px;
+                display: flex;
+                align-items: center;
+                letter-spacing: -0.6px;
+
+                color: #CCCCCC;
+                background: #FFFFFF;
                 border: none;
-            }
+                }
         .content__tasks {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: inherit;
-        }
-        ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
+            height: auto;
+            }
             .item-view {
                 display: flex;
+                width: 562px;
+                height: auto;
                 flex-direction: row;
                 align-items: center;
-                justify-content: center;
-                width: 400px;
-            }
-                .item-view__checkbox-status {
-                    width: 0;
-                    height: 0;
+                justify-content: space-between;
+                border-bottom: 1px lightgray solid;
+                background: #FFFFFF;
                 }
+                .item-view:hover > .item-view-delete-button {
+                    opacity: 1;
+                    }
+                .item-view:hover,
+                .item-view:hover .checkbox-status-off,
+                .item-view:hover .item-view-task-area,
+                .item-view:hover .item-view-delete-button,
+                .item-view:hover .item-view__checkbox-label {
+                    background-color: #FAFAFA;
+                    }
+                .item-view__checkbox-status {
+                    position: absolute;
+                    left: -9999px;
+                    }
+                    .item-view__checkbox-status:focus + .item-view__checkbox-label {
+                        border: 1px solid lightblue;
+                        border-radius: 2%;
+                        }
+                    .item-view__checkbox-status:focus ~ .item-view-delete-button {
+                        opacity: 1;
+                        }
                 .item-view-task-area {
                     font-style: normal;
-                    font-size: 15pt;
-                    flex-grow: 3;
+                    flex-grow: 1;
+                    height: 41px;
+                    width: 438px;
+                    font-weight: 300;
+                    font-size: 24px;
+                    line-height: 21px;
+
+                    display: flex;
+                    align-items: center;
+                    letter-spacing: -0.6px;
                     color: #666666;
-                    background: none;
-                    border: 1px lightgray solid;
-                    border-right: none;
-                    min-height: 23px;
-                }
+
+                    background: #FFFFFF;
+                    border: none;
+                    padding-top: 20px;
+                    min-height: 39px;
+                    }
+                    .item-view-task-area:focus ~ .item-view-delete-button {
+                        opacity: 1;
+                        }
                 .item-view-delete-button {
                     flex-shrink: 0;
                     display: inline-block;
-                    width: 29px;
-                    height: 29px;
-                    font-size: 15pt;
-                    color: #666666;
-                    background: #FFF url("../images/cross.svg") no-repeat;
-                    background-size: 29px 29px;
-                    border: 1px lightgray solid;
-                    border-left: none;
-                }
-                    .checkbox-status-off {
-                        display: inline-block;
-                        width: 20px;
-                        height: 20px;
+                    width: 64px;
+                    height: 64px;
+                    border: none;
+                    background: #FFF url("../images/cross.svg") no-repeat 22px 22px;
+                    background-size: 20px, 20px;
+                    opacity: 0;
                     }
-                    .checkbox-status-off:after {
-                        display: inline-block;
-                        position: relative;
-                        top: 2px;
-                        right: 5px;
-                        width: 20px;
-                        height: 20px;
-                        border-radius: 50%;
-                        background: #E5E5E5;
-                        background: linear-gradient(#D0D0D0, #FDFDFD);
-                        box-shadow:
-                                0 0 2px 2px #FFF inset,
-                                0 0 4px 1px rgba(0, 0, 0, 0.6);
-                        content: '';
+                    .item-view-delete-button:focus {
+                        opacity: 1;
+                        }
+                    .item-view-delete-button:hover ~ .item-view-delete-button:after {
+                        left: 0;
+                        }
+
+                .item-view__checkbox-label {
+                    flex-shrink: 0;
+                    width: 58px;
+                    height: 62px;
+                    background: #FFF url("../images/circle.svg") no-repeat 11px 11px;
+                    border: 1px transparent solid;
+                    }
+                .checkbox-status-off {
+                    position: absolute;
+                    width: inherit;
+                    height: 62px;
+                    background: #FFFFFF url("../images/checked.svg") no-repeat 11px 11px;
+                    opacity: 0;
                     }
                 .item-view__checkbox-status:checked ~ .item-view-task-area {
                     text-decoration: line-through;
-                }
-                .item-view__checkbox-status:checked + .item-view__checkbox-label .checkbox-status-off:after {
-                    background: url("../images/checked.svg") no-repeat;
-                    background-size: 20px 20px;
-                }
-                .item-view__checkbox-status:focus + .item-view__checkbox-label .checkbox-status-off:after,
-                .item-view__checkbox-status:hover + .item-view__checkbox-label .checkbox-status-off:after {
-                    background: rgba(100, 100, 100, 0.25);
-                }
-                .item-view__checkbox-status:checked:focus + .item-view__checkbox-label .checkbox-status-off:after,
-                .item-view__checkbox-status:checked:hover + .item-view__checkbox-label .checkbox-status-off:after {
-                    background: rgba(100, 100, 100, 0.25) url("../images/checked.svg") no-repeat;
-                    background-size: 20px 20px;
-                }
+                    }
+                .item-view__checkbox-status:checked + .item-view__checkbox-label .checkbox-status-off {
+                    opacity: 1;
+                    }
                 .item__empty_place {
                     display: inline-block;
-                    height: 30px;
-                }
+                    height: 52px;
+                    width: 562px;
+                    background: #FFFFFF;
+                    }
         .content__actions-bar {
             display: flex;
+            position: sticky;
+            bottom: 0;
             flex-direction: row;
             justify-content: space-around;
-            font-size: 8pt;
-            width: 400px;
-        }
+            width: 562px;
+            height: 43px;
+            background: #FFFFFF;
+            box-shadow: inset 0 1px 0 #E6E6E6;
+            }
             .actions-bar__item {
                 display: flex;
-                font-size: 8pt;
                 align-self: center;
-            }
+                }
+
+            .task-counter {
+                 width: 92px;
+                 height: 21px;
+
+                 font-family: Roboto, sans-serif;
+                 font-style: normal;
+                 font-weight: 300;
+                 font-size: 14px;
+                 line-height: 21px;
+
+                 letter-spacing: -0.35px;
+                 color: #888888;
+                }
+
             .task-filter {
                 display: flex;
                 flex-direction: row;
-            }
-                .task-filter__item {
-                    border: 1px solid #aaaaaa;
+                width: 192px;
+                height: 22px;
+                font-family: Roboto, sans-serif;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 21px;
+
+                align-items: center;
+                justify-content: center;
+                letter-spacing: -0.35px;
+
+                color: #888888;
                 }
+                .task-filter__item {
+                    width: auto;
+                    height: auto;
+                    }
+                .task-filter__label {
+                    position: relative;
+                    width: inherit;
+                    height: inherit;
+                    flex-shrink: 0;
+                    background: #FFFFFF;
+                    border: 1px solid transparent;
+                    border-radius: 10%;
+                    }
+
+                .task-filter__input:checked ~ .task-filter__label {
+                    border-color: #EBDFDF;
+                    }
+
                 .task-filter__text {
                     position: relative;
-                    right: 5px;
-                    text-align: center;
-                }
+                    /*right: 5px;*/
+                    /*text-align: center;*/
+                    }
                 .task-filter__input {
-                    opacity: 0;
-                    width: 0;
-                    height: 0;
-                }
-                .task-filter__input:checked + .task-filter__text {
-                    background: lightgray;
-                }
+                    position: relative;
+                    left: -99999px;
+                    }
                 .task-clear-completed {
-                    font-size: 8px;
+                    font-family: Roboto, sans-serif;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 14px;
+                    line-height: 21px;
+
+                    display: flex;
+                    align-items: center;
+                    letter-spacing: -0.35px;
+
+                    color: #888888;
+                    background: none;
                     border: none;
-                }
+                    }
