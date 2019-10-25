@@ -13,8 +13,8 @@
 <body>
 <div class="todo-app">
 
-  <header class="todo-app__header">
-    <h1 class="todo-app__header-h1">todos</h1>
+  <header class="todo-app__header header">
+    <h1 class="header__h1">todos</h1>
   </header>
 
   <main class="todo-app__content content">
@@ -26,93 +26,74 @@
     <section class="content__tasks tasks">
       <ul class="tasks__list list">
 
-        <li class="list__item item">
-          <div class="item-view">
-            <input type="checkbox" id="checkbox1" class="item-view__checkbox-status">
+        <li class="list__item-view item-view">
+            <input type="checkbox" id="checkbox1" class="item-view__checkbox">
             <label for="checkbox1" class="item-view__checkbox-label">
-              <span class="checkbox-status checkbox-status-off"></span>
+              <span class="item-view__checkbox-label__icon"></span>
             </label>
-            <textarea id="task-area1" class="item-view-task-area" rows="1" spellcheck="false">HTML</textarea>
-            <label for="task-area1"></label>
-            <button class="item-view-delete-button"></button>
-          </div>
+            <div id="task-area1" class="item-view__text">HTML</div>
+            <button class="item-view__delete-button"></button>
         </li>
 
-        <li class="list__item item">
-          <div class="item-view">
-            <input type="checkbox" id="checkbox2" class="item-view__checkbox-status">
+        <li class="list__item-view item-view">
+            <input type="checkbox" id="checkbox2" class="item-view__checkbox">
             <label for="checkbox2" class="item-view__checkbox-label">
-              <span class="checkbox-status checkbox-status-off"></span>
+              <span class="item-view__checkbox-label__icon"></span>
             </label>
-            <textarea id="task-area2" class="item-view-task-area" rows="1" spellcheck="false">CSS</textarea>
-            <label for="task-area2"></label>
-            <button class="item-view-delete-button"></button>
-          </div>
+            <div id="task-area2" class="item-view__text">CSS</div>
+            <button class="item-view__delete-button"></button>
         </li>
 
-        <li class="list__item item">
-          <div class="item-view">
-            <input type="checkbox" id="checkbox3" class="item-view__checkbox-status">
+        <li class="list__item-view item-view">
+            <input type="checkbox" id="checkbox3" class="item-view__checkbox">
             <label for="checkbox3" class="item-view__checkbox-label">
-              <span class="checkbox-status checkbox-status-off"></span>
+              <span class="item-view__checkbox-label__icon"></span>
             </label>
-            <textarea id="task-area3" class="item-view-task-area" rows="1" spellcheck="false">JS</textarea>
-            <label for="task-area3"></label>
-            <button class="item-view-delete-button"></button>
-          </div>
+            <div id="task-area3" class="item-view__text" >JS</div>
+            <button class="item-view__delete-button"></button>
         </li>
 
-        <li class="list__item item">
-          <div class="item-view">
-            <input type="checkbox" id="checkbox4" class="item-view__checkbox-status">
+        <li class="list__item-view item-view">
+            <input type="checkbox" id="checkbox4" class="item-view__checkbox">
             <label for="checkbox4" class="item-view__checkbox-label">
-              <span class="checkbox-status checkbox-status-off"></span>
+              <span class="item-view__checkbox-label__icon"></span>
             </label>
-            <textarea id="task-area4" class="item-view-task-area" rows="1" spellcheck="false">JS tools</textarea>
-            <label for="task-area4"></label>
-            <button class="item-view-delete-button"></button>
-          </div>
+            <div id="task-area4" class="item-view__text">JS tools</div>
+            <button class="item-view__delete-button"></button>
         </li>
       </ul>
-      <div class="item__empty_place"></div>
     </section>
 
     <section class="content__actions-bar actions-bar">
       <div class="actions-bar__item">
-        <div class="task-counter">3 items left</div>
+        <div class="actions-bar__item__task-counter">3 items left</div>
       </div>
 
       <div class="actions-bar__item">
 
-        <div class="task-filter" role="group" aria-label="Filter tasks by status">
+        <div class="actions-bar__item__task-filter task-filter" role="group" aria-label="Filter tasks by status">
 
-          <div class="task-filter__item">
-            <input id="radio1" class="task-filter__input" type="radio" name="filter" checked="checked" value="All"/>
+            <input id="radio1" class="task-filter__item__input" type="radio" name="filter" checked="checked" value="All"/>
             <label for="radio1" class="task-filter__label">
-              <span class="task-filter__text" aria-label="Select all tasks">All</span>
+              <span class="task-filter__item__text" aria-label="Select all tasks">All</span>
             </label>
-          </div>
 
-          <div class="task-filter__item">
-            <input id="radio2" class="task-filter__input" type="radio" name="filter" value="Active"/>
+            <input id="radio2" class="task-filter__item__input" type="radio" name="filter" value="Active"/>
             <label for="radio2" class="task-filter__label">
-              <span class="task-filter__text" aria-label="Select active tasks">Active</span>
+              <span class="task-filter__item__text" aria-label="Select active tasks">Active</span>
             </label>
-          </div>
 
-          <div class="task-filter__item">
-            <input id="radio3" class="task-filter__input" type="radio" name="filter" value="Completed"/>
+            <input id="radio3" class="task-filter__item__input" type="radio" name="filter" value="Completed"/>
             <label for="radio3" class="task-filter__label">
-              <span class="task-filter__text" aria-label="Select completed tasks">Completed</span>
+              <span class="task-filter__item__text" aria-label="Select completed tasks">Completed</span>
             </label>
-          </div>
 
         </div>
 
       </div>
 
       <div class="actions-bar__item">
-        <button class="task-clear-completed">Clear completed</button>
+        <button class="actions-bar__item__task-clear-completed">Clear completed</button>
       </div>
     </section>
   </main>
