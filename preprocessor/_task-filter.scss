@@ -1,0 +1,50 @@
+.actions-bar__item__task-filter {
+    display: flex;
+    font-family: $general-font;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+
+    align-items: center;
+    justify-content: center;
+    color: $actions-bar-text-color;
+}
+
+.task-filter__item__input {
+    position: absolute;
+    left: -99999px;
+
+    &:focus + .task-filter__label {
+        background-color: rgba(200, 200, 200, 0.2);
+    }
+
+    &:checked + .task-filter__label {
+        border-color: #EBDFDF;
+    }
+}
+
+.task-filter__label {
+    flex-shrink: 0;
+    background: $app-background-color;
+    border: 1px solid transparent;
+    border-radius: 10%;
+    padding: 3px 6px;
+
+    ~ .task-filter__label {
+        margin-left: 6px;
+    }
+}
+
+.task-filter__item__text {
+    position: relative;
+}
+
+.actions-bar__item__task-clear-completed {
+    font-family: $general-font;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+    color: $actions-bar-text-color;
+    background: none;
+    border: none;
+}
