@@ -1,0 +1,23 @@
+.content__actions-bar {
+    display: flex;
+    position: sticky;
+    bottom: 0;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    background: $app-background-color;
+
+    box-shadow:
+            inset 0 1px 0 $shadow-color,
+            0 2px 4px $shadow-color;
+    padding: 3px 12px;
+}
+
+.actions-bar__item__task-counter {
+    font-family: $general-font;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+    margin-left: 12px;
+    color: $actions-bar-text-color;
+}

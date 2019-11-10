@@ -1,0 +1,31 @@
+.todo-app {
+    position: relative;
+    width: 80%;
+    max-width: 562px;
+    min-width: 462px;
+    margin: 0 auto 20px;
+
+    &::before {
+        position: absolute;
+        top: 100%;
+        left: 2px;
+        right: 2px;
+        height: 5px;
+        background-color: $app-background-color;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        content: "";
+        z-index: -1;
+    }
+
+    &::after {
+        position: absolute;
+        top: 100%;
+        left: 4px;
+        right: 4px;
+        height: 10px;
+        background-color: $app-background-color;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        content: "";
+        z-index: -2;
+    }
+}

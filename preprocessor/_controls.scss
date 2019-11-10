@@ -1,0 +1,33 @@
+.content__controls{
+    display: flex;
+    height: 66px;
+    box-sizing: border-box;
+    border-bottom: 1px solid $shadow-color;
+    box-shadow: inset 0 -1px 10px $shadow-color;
+}
+.controls__select-all-button {
+    width: 60px;
+    height: 65px;
+    background-size: 30px 16px;
+    background: $app-background-color url("../img/arrow_down.svg") no-repeat 17px 27px;
+    border: none;
+    flex-shrink: 0;
+}
+.controls__create-text-field {
+    flex-grow: 1;
+    font-family: $general-font;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 21px;
+    border: none;
+    color: $main-text-color;
+    padding-left: 2px;
+
+    &::-webkit-input-placeholder {
+        color: $gray-text-color;
+    }
+    &::-moz-placeholder {
+        color: $gray-text-color;
+    }
+}
